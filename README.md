@@ -21,33 +21,51 @@ Chirpy is more than just a microblogging toy—it’s a foundation for real-worl
 Whether you’re building skills, prototyping a product, or just exploring, Chirpy delivers a polished starting point with room to grow.
 
 **Getting Started**
-_Clone the Repo:_
+* _Clone the Repo:_
+
 git clone https://github.com/Abdullahmojumder/chirpy.git
+
 cd chirpy
 
-_Set Up Environment:_ 
+* _Set Up Environment:_
+
 Copy .env.example to .env and fill in:
+
 DB_URL: PostgreSQL connection string
+
 TOKEN_SECRET: JWT secret key
+
 POLKA_KEY: Polka API key (e.g., f271c81ff7084ee5b99a5091b42d486e)
+
 PLATFORM: Set to dev for testing
 
-_Run Migrations:_
+
+* _Run Migrations:_
+
 goose -dir sql/schema postgres "$DB_URL" up
 
-_Generate Queries:_
+* _Generate Queries:_
+
 sqlc generate
 
-_Start the Server:_
+* _Start the Server:_
+
 go run main.go
+
 Access at http://localhost:8080.
 
 **API Highlights**
-POST /api/users: Register a new user.
-POST /api/chirps: Create a chirp (authenticated).
-GET /api/chirps: List chirps (?author_id=<uuid>&sort=asc|desc).
-POST /api/polka/webhooks: Upgrade users to Chirpy Red (Polka only).
-DELETE /api/chirps/{chirpID}: Delete a chirp (owner only).
+
+* POST /api/users: Register a new user.
+
+* POST /api/chirps: Create a chirp (authenticated).
+
+* GET /api/chirps: List chirps (?author_id=<uuid>&sort=asc|desc).
+
+* POST /api/polka/webhooks: Upgrade users to Chirpy Red (Polka only).
+
+* DELETE /api/chirps/{chirpID}: Delete a chirp (owner only).
+
 
 **Contributing**
 Feel free to fork, tweak, and submit PRs! Issues and feature requests are welcome on the GitHub Issues page.
@@ -55,5 +73,3 @@ Feel free to fork, tweak, and submit PRs! Issues and feature requests are welcom
 **License**
 MIT © Abdullahmojumder
 
-
-MIT © Abdullahmojumder
