@@ -22,26 +22,23 @@ Whether you’re building skills, prototyping a product, or just exploring, Chir
 
 **Getting Started**
 _Clone the Repo:_
-bash
 git clone https://github.com/Abdullahmojumder/chirpy.git
 cd chirpy
 
-_Set Up Environment: Copy .env.example to .env and fill in:_
+_Set Up Environment:_ 
+Copy .env.example to .env and fill in:
 DB_URL: PostgreSQL connection string
 TOKEN_SECRET: JWT secret key
 POLKA_KEY: Polka API key (e.g., f271c81ff7084ee5b99a5091b42d486e)
 PLATFORM: Set to dev for testing
 
 _Run Migrations:_
-bash
 goose -dir sql/schema postgres "$DB_URL" up
 
 _Generate Queries:_
-bash
 sqlc generate
 
 _Start the Server:_
-bash
 go run main.go
 Access at http://localhost:8080.
 
